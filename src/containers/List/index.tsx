@@ -192,7 +192,7 @@ const RoboList = (props: any) => {
                           {e.purpose}
                         </Typography>
                       </CardContent>
-                      <CardActions sx={{ display: "block" }}>
+                      <CardActions sx={{ display: "block", paddingBottom: 2 }}>
                         <Button
                           variant="contained"
                           sx={{ width: "30%" }}
