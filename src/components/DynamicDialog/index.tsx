@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Container,
   Dialog,
@@ -34,9 +35,11 @@ const DynamicDialog = (props: any) => {
   }
   return (
     <Container>
-      <Dialog open={isOpen}>
+      <Dialog open={isOpen} maxWidth="sm" fullWidth={true}>
         <DialogContent>
           <TextField
+            sx={{ padding: "8px 0px" }}
+            fullWidth
             variant="outlined"
             label="Name"
             id="name"
@@ -52,6 +55,8 @@ const DynamicDialog = (props: any) => {
           />
           <br />
           <TextField
+            sx={{ padding: "8px 0px 0px 0px" }}
+            fullWidth
             variant="outlined"
             label="Purpose"
             id="purpose"
@@ -67,14 +72,31 @@ const DynamicDialog = (props: any) => {
           <br />
         </DialogContent>
         <DialogActions>
-          <Button
-            variant="contained"
-            type="submit"
-            onClick={() => onAddRobot()}
-          >
-            {isEdit ? "Edit Robot" : "Add Robot"}
-          </Button>
-          <Button onClick={() => setOpen(false)}>Close</Button>
+          <Box sx={{ display: "flex", width: "100%", paddingBottom: 2 }}>
+            <div style={{ width: "50%", textAlign: "center" }}>
+              <Button
+                sx={{
+                  width: "85%",
+                }}
+                fullWidth
+                variant="contained"
+                type="submit"
+                onClick={() => onAddRobot()}
+              >
+                {isEdit ? "Edit Robot" : "Add Robot"}
+              </Button>
+            </div>
+            <div style={{ width: "50%", textAlign: "center" }}>
+              <Button
+                sx={{ width: "85%" }}
+                onClick={() => setOpen(false)}
+                variant="contained"
+                color="secondary"
+              >
+                Close
+              </Button>
+            </div>
+          </Box>
         </DialogActions>
       </Dialog>
     </Container>
