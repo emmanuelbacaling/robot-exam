@@ -6,8 +6,7 @@ import {
   DialogContent,
   TextField,
 } from "@mui/material"
-import { RoboData } from "../../containers/List"
-import { SetStateAction, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 const DynamicDialog = (props: any) => {
   console.log({ props })
@@ -21,7 +20,7 @@ const DynamicDialog = (props: any) => {
 
   useEffect(() => {
     setPayload(data)
-  }, [isOpen])
+  }, [data, isOpen])
 
   const onAddRobot = () => {
     if (isEdit) {

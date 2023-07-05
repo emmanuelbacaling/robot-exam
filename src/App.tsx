@@ -1,7 +1,6 @@
-import React from "react"
-import logo from "./logo.svg"
+// import React from "react"
 import "./App.css"
-import ProtectedRoute from "./containers/ProtectedRoute"
+// import ProtectedRoute from "./containers/ProtectedRoute"
 import RoboList from "./containers/List"
 
 function App() {
